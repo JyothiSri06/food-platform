@@ -1,0 +1,18 @@
+{
+  "name": "jeji-vantalu-platform",
+  "version": "1.0.0",
+  "description": "Jeji Vantalu E-commerce Platform",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "render-build": "npm run install-all && npm run build",
+    "start": "cross-env NODE_ENV=production cd server && npm start",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "db:init": "cd server && node config/db.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3"
+  }
+}

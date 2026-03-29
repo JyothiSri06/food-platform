@@ -1,0 +1,102 @@
+{
+  "orders": [
+    {
+      "column_name": "id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "user_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "total_amount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "payment_status",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "order_status",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "delivery_method",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "shipping_address",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "delivery_fee",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "discount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "customization_notes",
+      "data_type": "text"
+    },
+    {
+      "column_name": "customization_choices",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "status_updates",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "refund_status",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "refund_id",
+      "data_type": "character varying"
+    }
+  ],
+  "order_items": [
+    {
+      "column_name": "id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "order_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "product_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "quantity",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "price",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "product_type",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "weight",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "product_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "customization_choices",
+      "data_type": "jsonb"
+    }
+  ]
+}

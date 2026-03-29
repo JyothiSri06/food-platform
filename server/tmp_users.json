@@ -1,0 +1,32 @@
+[
+  {
+    "id": 3,
+    "email": "admin1773304382317@test.com",
+    "role": "admin"
+  },
+  {
+    "id": 4,
+    "email": "admin1773304407897@test.com",
+    "role": "admin"
+  },
+  {
+    "id": 5,
+    "email": "admin1773304465977@test.com",
+    "role": "admin"
+  },
+  {
+    "id": 6,
+    "email": "admin1773304810926@test.com",
+    "role": "admin"
+  },
+  {
+    "id": 8,
+    "email": "admin@sdfoods.com",
+    "role": "admin"
+  },
+  {
+    "id": 1,
+    "email": "jejivantalu@gmail.com",
+    "role": "admin"
+  }
+]

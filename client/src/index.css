@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-image: url('/site-bg-new.png');
+    background-repeat: repeat;
+    background-size: 600px;
+    background-attachment: fixed;
+    background-color: #E8E2D8; /* Fallback */
+  }
+}
+
+@layer utilities {
+  .animate-pulse-once {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) 1;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #213C5144;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #213C5188;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(2deg); }
+    50% { transform: translateY(-15px) rotate(0deg); }
+    100% { transform: translateY(0px) rotate(2deg); }
+  }
+
+  @keyframes float-mobile {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  .animate-float-mobile {
+    animation: float-mobile 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(234, 88, 12, 0.2)); }
+    50% { filter: drop-shadow(0 0 25px rgba(234, 88, 12, 0.4)); }
+  }
+
+  .hero-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Hide elements meant only for printing during screen view */
+  .print-only {
+    display: none;
+  }
+
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    .print-only, .print-only * {
+      visibility: visible;
+    }
+    .print-only {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      display: block !important;
+    }
+    .no-print {
+      display: none !important;
+    }
+  }
+}

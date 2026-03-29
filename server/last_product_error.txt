@@ -1,0 +1,4 @@
+{
+  "message": "column \"weight\" of relation \"products\" does not exist",
+  "code": "42703"
+}

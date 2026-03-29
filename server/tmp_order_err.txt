@@ -1,0 +1,4 @@
+error: insert or update on table "orders" violates foreign key constraint "orders_user_id_fkey"
+    at C:\Users\jyoth\OneDrive\Desktop\JyothiSri\Placements\Projects\food-platform\server\node_modules\pg\lib\client.js:631:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async exports.addOrderItems (C:\Users\jyoth\OneDrive\Desktop\JyothiSri\Placements\Projects\food-platform\server\controllers\orderController.js:83:24)

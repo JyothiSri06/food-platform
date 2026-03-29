@@ -1,0 +1,16 @@
+client/src/components/Invoice.jsx
+client/src/pages/Login.jsx
+server/backup_sdfoods.sql
+server/config/db.js
+server/controllers/shippingController.js
+server/fix_admin_role.js
+server/gen_test_token.js
+server/index.js
+server/initDb.js
+server/migrate_discounts.js
+server/migrate_products.js
+server/reset_admin.js
+server/scripts/check_admin.js
+server/seedProducts.js
+server/server_error_debug.log
+package.json

@@ -10,11 +10,11 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [googleLoaded, setGoogleLoaded] = useState(true);
-    
+
     const { login, googleLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    
+
     const redirect = new URLSearchParams(location.search).get('redirect') || '/';
 
     const handleSubmit = async (e) => {
@@ -60,7 +60,7 @@ const Login = () => {
                         </Link>
                     </p>
                     <p className="mt-2 text-center text-[10px] text-gray-400 font-bold uppercase tracking-widest opacity-60">
-                        Mock Admin: admin@sdfoods.com | admin123
+                        Mock Admin: admin@jejivantalu.com | admin123
                     </p>
                 </div>
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit}>

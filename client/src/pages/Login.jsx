@@ -59,7 +59,7 @@ const Login = () => {
                             Create an account
                         </Link>
                     </p>
-                    <p className="mt-2 text-center text-[10px] text-gray-400 font-bold uppercase tracking-widest opacity-60">
+                    <p className="mt-2 text-center text-[10px] text-gray-400 font-bold lowercase tracking-widest opacity-60">
                         Mock Admin: admin@jejivantalu.com | admin123
                     </p>
                 </div>

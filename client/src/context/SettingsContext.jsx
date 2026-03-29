@@ -13,7 +13,7 @@ export const SettingsProvider = ({ children }) => {
         fssai_reg: 'Registered FSSAI Unit',
         quality_assurance: 'Homemade Quality Assurance',
         address_line_2: 'Commercial Zone 4, Hyderabad',
-        logo_url: '/logo.png',
+        logo_url: '/Jeji vantalu logo.png',
         hero_title: 'From Our Kitchen to Your Cravings',
         hero_description: 'Delicious Homemade Foods',
         hero_video_url: '/videos/Animated video hero section.mp4',

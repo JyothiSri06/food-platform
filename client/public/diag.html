@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Google Sign-In Diagnostic</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
+
 <body style="font-family: sans-serif; padding: 20px;">
     <h1>Google Sign-In Diagnostic</h1>
     <p>This page tests if your Google Client ID and Origin are correctly configured.</p>
-    
+
     <div style="background: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
         <strong>Current Origin:</strong> <code id="origin"></code><br>
-        <strong>Client ID:</strong> <code>934821338975-140gg3pjcjhudvvnk3mdlocspaeq9umv.apps.googleusercontent.com</code>
+        <strong>Client ID:</strong>
+        <code>934821338975-140gg3pjcjhudvvnk3mdlocspaeq9umv.apps.googleusercontent.com</code>
     </div>
 
-    <div id="g_id_onload"
-         data-client_id="934821338975-140gg3pjcjhudvvnk3mdlocspaeq9umv.apps.googleusercontent.com"
-         data-context="signin"
-         data-ux_mode="popup"
-         data-callback="handleCredentialResponse"
-         data-auto_prompt="false">
+    <div id="g_id_onload" data-client_id="934821338975-140gg3pjcjhudvvnk3mdlocspaeq9umv.apps.googleusercontent.com"
+        data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse" data-auto_prompt="false">
     </div>
 
-    <div class="g_id_signin"
-         data-type="standard"
-         data-shape="pill"
-         data-theme="filled_blue"
-         data-text="signin_with"
-         data-size="large"
-         data-logo_alignment="left">
+    <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin_with"
+        data-size="large" data-logo_alignment="left">
     </div>
 
     <div id="status" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none;"></div>
@@ -43,11 +37,12 @@
             console.log("Encoded JWT ID token: " + response.credential);
         }
 
-        window.onload = function() {
+        window.onload = function () {
             if (window.location.protocol === 'file:') {
                 alert("Please run this file via an HTTP server (e.g., http://localhost:5173/diag.html) for Google Sign-In to work.");
             }
         };
     </script>
 </body>
+
 </html>

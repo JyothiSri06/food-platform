@@ -18,12 +18,29 @@ const Login = () => {
     const redirect = new URLSearchParams(location.search).get('redirect') || '/';
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault();
         try {
             await login(identifier, password);
             navigate(redirect);
         } catch (err) {
             setError(err.response?.data?.message || 'Login failed');
+        }
+    };
+
+    const handleDemoLogin = async (type) => {
+        const creds = type === 'admin' 
+            ? { id: 'admin@jejivantalu.com', pass: 'admin123' }
+            : { id: 'customer@jejivantalu.com', pass: 'customer123' };
+        
+        setError('');
+        setIdentifier(creds.id);
+        setPassword(creds.pass);
+        
+        try {
+            await login(creds.id, creds.pass);
+            navigate(redirect);
+        } catch (err) {
+            setError(err.response?.data?.message || 'Demo login failed');
         }
     };
 
@@ -105,6 +122,25 @@ const Login = () => {
                             className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-xl text-[#213C51] bg-[#213C51]/5 border-[#213C51]/20 hover:bg-[#213C51] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 shadow-md shadow-orange-600/30 transition-all font-inter"
                         >
                             Sign in
+                        </button>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3 !mt-4">
+                        <button
+                            type="button"
+                            onClick={() => handleDemoLogin('admin')}
+                            className="flex flex-col items-center justify-center py-2 px-3 border border-orange-200 rounded-xl text-orange-700 bg-orange-50/50 hover:bg-orange-100 transition-all group/btn"
+                        >
+                            <span className="text-[9px] uppercase tracking-widest font-black opacity-60">Portfolio</span>
+                            <span className="text-xs font-bold">Demo Admin</span>
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => handleDemoLogin('customer')}
+                            className="flex flex-col items-center justify-center py-2 px-3 border border-blue-200 rounded-xl text-blue-700 bg-blue-50/50 hover:bg-blue-100 transition-all group/btn"
+                        >
+                            <span className="text-[9px] uppercase tracking-widest font-black opacity-60">Portfolio</span>
+                            <span className="text-xs font-bold">Demo Customer</span>
                         </button>
                     </div>
 

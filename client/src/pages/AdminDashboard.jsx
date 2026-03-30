@@ -508,6 +508,7 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState({
     totalProducts: 0,
     totalOrders: 0,
+    totalRevenue: 0,
     pendingDeliveries: 0,
     cancelledOrders: 0,
     pendingRefunds: 0
@@ -630,7 +631,7 @@ const AdminDashboard = () => {
   const renderDashboard = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
       {[
-        { label: 'Total Revenue', value: `₹${stats.totalRevenue.toLocaleString()}`, icon: ShoppingBag, color: 'text-[#213C51]', bg: 'bg-[#213C51]/10' },
+        { label: 'Total Revenue', value: `₹${(stats.totalRevenue || 0).toLocaleString()}`, icon: ShoppingBag, color: 'text-[#213C51]', bg: 'bg-[#213C51]/10' },
         { label: 'Total Orders', value: stats.totalOrders, icon: ClipboardList, color: 'text-[#213C51]', bg: 'bg-[#213C51]/10' },
         { label: 'Total Products', value: stats.totalProducts, icon: Package, color: 'text-[#213C51]', bg: 'bg-[#213C51]/20' },
         { label: 'Pending Deliveries', value: stats.pendingDeliveries, icon: Truck, color: 'text-[#213C51]', bg: 'bg-[#213C51]/20' },

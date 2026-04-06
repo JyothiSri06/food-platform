@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build:cpp": "g++ -O3 cpp_engine/optimizer.cpp -o cpp_engine/optimizer.exe || g++ -O3 cpp_engine/optimizer.cpp -o cpp_engine/optimizer",
+    "prestart": "npm run build:cpp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

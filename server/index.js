@@ -68,6 +68,7 @@ app.use('/api/delivery', require('./routes/deliveryRoutes'));
 app.use('/api/delivery-areas', require('./routes/deliveryAreaRoutes'));
 app.use('/api/customizations', require('./routes/customizationRoutes'));
 app.use('/api/settings', require('./routes/settingsRoutes'));
+app.use('/api/optimize-route', require('./routes/routeOptimizationRoutes'));
 
 // Basic health route
 app.get('/api/health', (req, res) => {

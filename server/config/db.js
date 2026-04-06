@@ -117,6 +117,20 @@ const runMigration = async (label, sql) => {
             CREATE INDEX IF NOT EXISTS idx_orders_user_id ON orders(user_id);
             CREATE INDEX IF NOT EXISTS idx_payments_razorpay_order_id ON payments(razorpay_order_id);
         `);
+        // Enable RLS for all tables to satisfy Supabase Security Advisor and lock down data API
+        await runMigration('Enable RLS', `
+            ALTER TABLE users ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE categories ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE products ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE order_items ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE site_settings ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE payments ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE delivery_partners ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE delivery_areas ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE local_deliveries ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE shipments ENABLE ROW LEVEL SECURITY;
+        `);
 
         // 4. Seed
         await query(`INSERT INTO site_settings (key, value) VALUES 

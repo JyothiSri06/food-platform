@@ -130,6 +130,7 @@ const runMigration = async (label, sql) => {
             ALTER TABLE delivery_areas ENABLE ROW LEVEL SECURITY;
             ALTER TABLE local_deliveries ENABLE ROW LEVEL SECURITY;
             ALTER TABLE shipments ENABLE ROW LEVEL SECURITY;
+            ALTER TABLE IF EXISTS customization_options ENABLE ROW LEVEL SECURITY;
         `);
 
         // 4. Seed

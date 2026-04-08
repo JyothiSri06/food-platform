@@ -59,15 +59,6 @@ const Home = () => {
     fetchProducts();
   }, []);
 
-  if (loading) return (
-    <div className="h-screen w-full flex items-center justify-center">
-      <div className="flex flex-col items-center">
-        <div className="w-16 h-16 border-4 border-[#213C51]/20 border-t-[#213C51] rounded-full animate-spin"></div>
-        <p className="mt-4 text-xs font-black uppercase tracking-[0.3em] text-gray-400">Synchronizing Engine</p>
-      </div>
-    </div>
-  );
-
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
